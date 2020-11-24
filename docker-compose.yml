@@ -1,0 +1,15 @@
+version: "3.7"
+
+services:
+  pythonrmqworker:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: pythonrmqworker
+    restart: unless-stopped
+    networks: 
+      - some-net
+
+networks: 
+  some-net:
+    external: true
